@@ -22,7 +22,7 @@
             <div class="content">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active " id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">All User</button>
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">All User</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Add User</button>
@@ -34,77 +34,55 @@
                         <div class="usermaster">
 
                             <div class="row filter-div">
-                                <div class="col-2">
+                                <div class="col-2 ">
                                     <label for="id">Id:</label>
-                                    <input type="text" class="form-control" id="id">
+                                    <input type="text" class="form-control numeric search" >
                                 </div>
                                 <div class="col-2">
                                     <label for="name">Name:</label>
-                                    <input type="text" class="form-control" id="name">
+                                    <input type="text" class="form-control search">
                                 </div>
                                 <div class="col-2">
                                     <label for="phone">Phone:</label>
-                                    <input type="text" class="form-control" id="phone">
+                                    <input type="text" class="form-control numeric search" >
                                 </div>
                                 <div class="col-2">
                                     <label for="email">Email:</label>
-                                    <input type="text" class="form-control" id="email">
+                                    <input type="email" class="form-control search" >
                                 </div>
 
                                 <div class="col-2">
-                                    <button type="button" class="btn btn-outline-primary mt-3">Reset</button>
+                                    <button type="button" class=" mt-3" id="reset">Reset</button>
                                 </div>
                             </div>
 
 
                             <div class="getlist">
-                                <div class="pagination">
-                                    <div>
-                                        Row
-                                        <select name="" id="row">
-                                            <option value="3">3</option>
-                                            <option value="5">5</option>
-                                            <option value="10">10</option>
-                                        </select>
-                                    </div>
-                                     <div class="page"> 
-                                     <!-- <a>Preview</a>  -->
-                                             <a id="1">1</a>
-                                            <a id="2">2</a>
-                                            <a id="3">3</a> 
-                                             <!-- <a>Next>></a>  -->
-                                     </div> 
+                                <!-- <div class="pagination"> -->
+                                <select name="" id="">
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                </select> 
                                 </div>
-                                <table class="table  table-hover">
-
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                            <th>Delete</th>
-                                            <th>Update</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tbody"></tbody>
-                                </table>
-
-
-                            </div>
+                                
+                              
                         </div>
+
+                    </div>
+                        
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
                             <div class="row filter-div ">
 
                                 <div class="col-2">
-                                    <label for="name">Name:</label>
+                                    <label for="Name">Name:</label>
                                     <input type="text" class="form-control" id="Name" name="name" maxlength="20" oninput="namevalidate()">
                                     <span id="log_er2"></span>
                                 </div>
                                 <div class="col-2">
-                                    <label for="phone">Phone:</label>
-                                    <input type="text" class="form-control numeric" id="Phone" name="phone" maxlength="12">
+                                    <label for="Phone">Phone:</label>
+                                    <input type="text" class="form-control numeric" id="Phone" name="phone" maxlength="12" oninput="phone()">
                                     <span id="log_er3"></span>
                                 </div>
                                 <div class="col-2">
@@ -115,14 +93,19 @@
                                 <div class="col-2">
                                     <label for="inputPassword">Password:</label>
                                     <input type="password" class="form-control" id="inputPassword" name="password" oninput="validPassword()">
+                    
                                     <span id="log_er"></span>
                                 </div>
+                                <input type="hidden" id="id" value="">
                                 <div class="col-2">
-                                    <button type="button" class="btn btn-outline-primary mt-3" id="insert-btn">Add</button>
-                                </div>
+                                    <button type="button" class=" mt-3" id="insert-btn">Add</button>
+                                    <button type="button" class=" mt-3" id="update-btn">update</button>
 
+                                </div>
+                               
                             </div>
 
+                        </div>
                         </div>
 
                     </div>
@@ -130,11 +113,7 @@
             </div>
 
         </div>
-
-
-
-
-
+         
         <script src="assetes/js/bootstrap.min.js"></script>
         <script src="assetes/jquery/jquery-3.7.1.min.js"></script>
         <script src="validation.js"></script>

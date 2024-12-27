@@ -36,50 +36,123 @@ class User_master
         }
     }
 
-    function getdata()
-    {
-        $sql = "select*from user_master";
-        $result = mysqli_query($this->con, $sql);
-        
-
-        
-        if ($result->num_rows > 0) {
-
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>{$row['id']}</td><td>{$row['create_by']}</td><td>{$row['phone']}</td><td>{$row['email']}</td>
-        <td><button  class='btn btn-outline-primary edit-btn p-0' data-id={$row['id']} >Edit</button></td><td><button  class=' btn btn-outline-danger p-0 delete-btn' data-id={$row['id']} >delete</button></td></tr>";
-            }
-        }
-    }
-
-
-
 
     function adduser(){
-
+      
         $email = $_POST["email"];
         $password = $_POST["password"];
         $name=$_POST['Name'];
         $phone=$_POST['phone'];
 
+        
+        if (!preg_match("/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}$/", $email)) {
+            echo "entered email is invalid";
+        } 
+        
+       else if(!preg_match("/^(?=.*[A-Z])(?=.*[^%!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,20}$/", $password)) {
+        echo "entered password is invalid";
+        } 
+       
+        else if(!preg_match("/^[0-9]{10,12}$/",$phone)){
+          echo "entered phone number is invalid";
+        }
+
+        else if(!preg_match("/^[a-zA-Z\s.]+$/",$name)){
+            echo "entered name is invalid";
+        }
+
+
+        if(!empty($email && $password && $name && $phone)){
         $sql="insert into user_master(create_by,email,phone,password)values('$name','$email','$phone','$password')";
         if(mysqli_query($this->con,$sql)==true)
         {
-            echo "data is successfully inserted";
+            echo 1;
         }
         else{
             echo $this->con->error;
         }
+        }
+        
     }
 
 
+    function getdata(){
+        
+$id=$_POST['id'];
+
+
+$sql="select * from user_master where id='{$id}'";
+
+$result=$this->con->query($sql);
+$data= $result->fetch_assoc();
+print_r(json_encode($data));
+    }
+
+    function update(){
+
+        
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $name=$_POST['Name'];
+        $phone=$_POST['phone'];
+        $id=$_POST['id'];
+        
+        $sql="update  user_master
+        set create_by='$name',
+        email='$email',
+        phone='$phone',
+        password='$password' where id='$id'";
+        if(!empty($email && $password && $name && $phone)){
+        if(mysqli_query($this->con,$sql)==true)
+        {
+            echo 1;
+        }
+          
+        }
+    }
+
+
+function deletedata(){
+    $id=$_POST['id'];
     
+     $sql="delete from user_master where id='$id'";
+     
+     if(mysqli_query($this->con,$sql)==false){
+                  
+            echo $this->con->error;
+               }
+               else{
+                   echo "success";
+               }
+
+      }
+
+
+    
+
+
+
 }
 
-
-
 $user = new User_master();
-$user->getdata();
+
+
+if($_POST['action'] == "add"){
+    $user->adduser();
+}else if($_POST['action'] == "update"){
+    $user->update();
+
+}
+
+else if($_POST['action']=="getdata"){
+    $user->getdata();
+}
+else if($_POST['action']== "delete"){
+
+    $user->deletedata();
+
+}
+
 
 
 

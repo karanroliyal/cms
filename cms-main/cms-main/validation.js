@@ -12,6 +12,20 @@ function validEmail() {
     }
   }
   
+  function phone(){
+    let phone = document.getElementById("Phone").value;
+    let validPhone = /^[0-9]{10,12}$/
+    if(validPhone.test(phone)){
+      document.getElementById("log_er3").innerText="";
+    }
+    else if(phone==""){
+      document.getElementById("log_er3").innerText="";
+    }
+    else{
+      document.getElementById("log_er3").innerText="atleast 10 digit";
+    }
+  }
+
   function validPassword() {
     var validPassword =
       /^(?=.*[A-Z])(?=.*[^%!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,20}$/;
@@ -54,23 +68,21 @@ function validEmail() {
     
     if (Name == "") {
       $("#log_er2").html("all field are required");
-      return false;
+      
     } 
-    else if (phone==""){
+     if (phone==""){
         $("#log_er3").html("all field are required");
-        return false;
-       
       }
-      else if(email == "") {
+      
+       if(email == "") {
         $("#log_er1").html("all field are required");
-        return false;
+      
         
       }
-    else if(password == "") {
+     if(password == "") {
       $("#log_er").html("all field are required");
-      return false;
-     
     } 
+   
      
   }
   
