@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Eczar:wght@400..800&family=Kanit:wght@500&family=Nunito&family=Oswald:wght@300;400&family=PT+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu&display=swap');
+
+body , html{
+  font-family: "Poppins", serif;
+  margin: 0px;
+  padding: 0px;
+}
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+
 span {
   color: red;
   font-size: 13px;
@@ -86,7 +100,7 @@ span {
     background-color: rgb(230 97 240);
   }
 
-  
+
 
 }
 
@@ -106,120 +120,179 @@ span {
     background-color: rgb(25 28 55);
     display: 10;
 
-    img {
-      height: 23px;
-
-    }
+    
   }
+  img{
+    height: 10px;
 
-  .content-div {
-    display: flex;
-    /* display: 10; */
-
-    /* .content{
-     display: flex;
-     .usermaster{
-      display: inline;
-     }
-  }  */
-
-
-
-    /* .nav{
-    display: 10;
-  } */
-    .sidebar-div {
-      width: 200px;
-      flex: 2;
-      height: 92vh;
-      background-color: rgb(25 28 55);
-      padding: 10px;
-
-      .btn {
-        height: 25px;
-        width: 150px;
-        color: rgb(123 138 167);
-        text-align: left;
-        margin: 20px;
-        font-size: 13px;
-        display: flex;
-
-        img {
-          height: 15px;
-          margin-right: 3px;
-        }
-
-        a {
-          color: rgb(123 138 167);
-          text-decoration: none;
-
-        }
-      }
-
-      .btn:focus {
-        box-shadow: 0 0 0 .20rem rgba(178, 85, 190, 0.25);
-        background-color: rgb(129 94 229);
-        color: white;
-      }
-
-      .btn:hover {
-        background-color: rgb(129 94 229);
-
-      }
-    }
-
-    .content {
-      display: 8;
-    }
   }
 }
+
+
 /*...............usermaster................ */
- .usermaster{
+.usermaster {
   display: grid;
-  gap:50px;
-  
- }
+  gap: 20px;
+
+}
 
 .filter-div {
   border-radius: 2px;
   height: 100px;
-  box-shadow: rgba(92, 50, 131, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  
   padding: 10px;
   font-size: 13px;
   border-radius: 8px;
-  margin: 20px;
+  margin: 20px 15px;
+  background-color: #f1f1f1;
   input {
     height: 30px;
   }
 
-  .btn {
-    /* box-shadow: 0 0 0 .20rem rgba(178, 85, 190, 0.25); */
-    background-color: rgb(129 94 229);
-    color: white;
-
+  button {
+   
     text-align: center;
+       color: aliceblue;
+    background-color: #8e8a8a;
+    border-radius: 5px;
+    height: 35px;
+    border: none;
+    width: 50px;
+
   }
 
 
 }
 
-.btn:hover {
-  background-color: rgb(51, 0, 192);
 
-}
+
 .getlist {
   font-size: 13px;
- 
+  margin: 0px 20px;
   border-radius: 8px;
+  padding: 10px;
   /* height: 200px; */
-  box-shadow: rgba(92, 50, 131, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-
-  /* .table>:not(caption)>*>*{
-    padding: 0px;
+  background-color: #f1f1f1;
+text-align: center;
+  
+.selectrow{
+  display: flex;
+  justify-content: end;
+  select{
+    width: 50px;
   }
-  .table{
-    tbody{
-      vertical-align: none;
+}
+.page{
+  display: flex;
+ margin: 10px;
+ color: white; 
+ list-style: none;
+ justify-content: end;
+ gap:7px;
+ li{
+  width: 25px;
+  height: 25px;
+  color: #8e8a8a;
+  background-color: #c8c8c8;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 1px;
+ }
+ .active{
+  background-color:#8e8a8a;
+  color: white;
+ }
+}
+
+img{
+  height: 17px;
+  
+ }
+}
+
+
+
+
+
+
+
+.main-container-wrapper {
+
+  .main-nav-bar{
+    .nav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 10px;
+      border-bottom: 1px solid #c8c8c8;
+      .my-logo img{
+        width: 158px;
+      }
+      .profile img{
+        width: 20px;
+      }
     }
-  } */
-} 
+  }
+
+  .detail-container {
+    display: flex;
+
+
+    .sidebar {
+      flex: 1.2;
+      padding: 30px 10px;
+      height: auto;
+      border-right: 1px solid #c8c8c8;
+      .sidebar-div{
+        display: flex;
+        padding: 0px;
+        flex-direction: column;
+        list-style: none;
+        gap: 20px;
+        color: #8e8a8a;
+        font-size: 14px;
+        font-weight: 500;
+        button{
+          border: none;
+          padding: 5px 12px;
+          border-radius: 5px;
+          cursor: pointer;
+          background-color: white;
+          text-align: left;
+          img{
+            width: 17px;
+            margin-right: 10px;
+          }
+          a{
+            text-decoration: none;
+            color: #8e8a8a;
+            
+          }
+          button:hover{
+            background-color: #f1f1f1;
+            color: black;
+          }
+          button:focus{
+            background-color: #f1f1f1;
+            color: black;
+          }
+        }
+       
+      }
+      
+      
+    }
+
+    .content {
+      flex: 8.8;
+      padding: 10px 10px;
+
+      .btn{
+        margin-right: 5px;
+        color: #8e8a8a;
+      }
+    }
+
+  }
+
+}
