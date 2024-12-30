@@ -4,6 +4,8 @@
 
 $("#update-btn").hide();
 
+// login//---------------
+
 $("#login-btn").on("click", function () {
   let email = $("#inputemail").val();
 
@@ -57,35 +59,20 @@ loaddata();
 $(document).ready(function () {
   $(document).on("click", ".page li", function () {
     page_id = $(this).attr("id");
-
-    loaddata(page_id);
+    $("#page_no").val(page_id);
+        
+ var row= $("#row").val();
+  
+    loaddata(page_id,'','','',row);
   });
 
-
-  
-  let order="ASC";
-  $(document).ready(function(){
-  $(document).on("click",".short",function(){
-  
-    if(order=="ASC"){
-      order="DESC";
-    }
-    else{
-      order="ASC";
-    }
-    var colname=$(this).attr("id");
-  
-    
-    loaddata(page_id,'',order,colname);
-    
-    });
-  });
 });
 
 
 $(document).ready(function(){
-  $(document).on("change","#row",function(){
+  $(document).on("click","#row",function(){
     var row =$(this).val();
+   
    
     loaddata(1,'','','',row);
   })
@@ -98,28 +85,29 @@ $(document).ready(function(){
 $(document).ready(function () {
   $(document).on("keyup", ".search", function () {
     var search = $(this).val();
-
+    
     loaddata(1, search);
   });
 });
 
-// let order="ASC";
-// $(document).ready(function(){
-// $(document).on("click",".short",function(){
 
-//   if(order=="ASC"){
-//     order="DESC";
-//   }
-//   else{
-//     order="ASC";
-//   }
-//   var colname=$(this).attr("id");
+let order="ASC";
+$(document).ready(function(){
+$(document).on("click",".short",function(){
 
+  if(order=="ASC"){
+    order="DESC";
+  }
+  else{
+    order="ASC";
+  }
+  var colname=$(this).attr("id");
+   var page_no=$("#page_no").val();
+   var row= $("#row").val();
+  loaddata(page_no,'',order,colname,row);
   
-//   loaddata(1,'',order,colname);
-  
-//   });
-// });
+  });
+});
 
 // reset data from live search.....................
 
@@ -139,13 +127,20 @@ $("#insert-btn").on("click", function () {
   var email = document.getElementById("inputemail").value;
   var phone = document.getElementById("Phone").value;
 
+
+  console.log(  $("#log_er1").val(),' $("#log_er1").val()')
+  console.log(  $("#log_er2").val(),' $("#log_er1").val()')
+  console.log(  $("#log_er").val(),' $("#log_er1").val()')
+  console.log(  $("#log_er3").val(),' $("#log_er1").val()')
+
   if (
-    $("#log_er1").val() == "" &&
-    $("#log_er2").val() == "" &&
-    $("#log_er").val() == "" &&
-    $("#log_er3").val() == ""
+    $("#log_er1").text()=="" &&
+    $("#log_er2").text()=="" &&
+    $("#log_er").text()=="" &&
+    $("#log_er3").text()==""
   ) 
   {
+    debugger
     $.ajax({
       url: "http://localhost/First_Project/usermaster/user_backend.php",
 
@@ -170,6 +165,7 @@ $("#insert-btn").on("click", function () {
    
     });
   }
+
 });
 
 // delete data from database........................................

@@ -2,7 +2,7 @@
 
 include("../dbcon.php");
 
-$limit =2;
+$limit ="";
 $output = "";
 $page = "";
 $search = "";
@@ -10,6 +10,7 @@ $sort = "";
 
 if (isset($_POST['page_no'])) {
     $page = $_POST['page_no'];
+   
 } else {
     $page = 1;
 }
@@ -40,7 +41,7 @@ if (isset($_POST['row'])) {
     
 }
 else{
-    $limit = 3;
+    $limit = 2;
 }
 
 $sql1 = "select * from user_master where  id  like '%{$search}%' or create_by LIKE '%{$search}%' or phone like '%{$search}%' or email like '%{$search}%' '{$sort}' ";

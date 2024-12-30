@@ -49,7 +49,7 @@ class User_master
             echo "entered email is invalid";
         } 
         
-       else if(!preg_match("/^(?=.*[A-Z])(?=.*[^%!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,20}$/", $password)) {
+        else if(!preg_match("/^(?=.*[A-Z])(?=.*[^%!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,20}$/", $password)) {
         echo "entered password is invalid";
         } 
        
@@ -57,7 +57,7 @@ class User_master
           echo "entered phone number is invalid";
         }
 
-        else if(!preg_match("/^[a-zA-Z\s.]+$/",$name)){
+         else if(!preg_match("/^[a-zA-Z\s.]+$/",$name)){
             echo "entered name is invalid";
         }
 
