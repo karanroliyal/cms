@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Eczar:wght@400..800&family=Kanit:wght@500&family=Nunito&family=Oswald:wght@300;400&family=PT+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu&display=swap');
 
 body , html{
-  font-family: "Poppins", serif;
+  font-family: "Poppins", "serif";
   margin: 0px;
   padding: 0px;
 }
@@ -130,26 +130,27 @@ span {
 
 
 /*...............usermaster................ */
-.usermaster {
+.usermaster{
   display: grid;
   gap: 20px;
 
 }
 
-.filter-div {
+.input-div{
   border-radius: 2px;
   height: 100px;
   color: #273A3A;
   padding: 10px;
   font-size: 13px;
   border-radius: 8px;
-  margin: 20px 15px;
+  margin: 30px 30px;
   background-color: #f1f1f1;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  input {
+  input{
     height: 30px;
+    font-size: 13px;
   }
-
+  
   button {
    
     text-align: center;
@@ -162,10 +163,12 @@ span {
 
   }
 
-
 }
 
+.client-searchbar{
 
+  margin: 20px;
+}
 
 .getlist {
   font-size: 13px;
@@ -217,7 +220,7 @@ img{
 
 
 
-
+/* model for all pages */
 
 .main-container-wrapper {
 
@@ -238,7 +241,8 @@ img{
     }
   }
 
-  .detail-container {
+  .detail-container
+   {
     display: flex;
 
 
@@ -260,17 +264,17 @@ img{
         color: #8e8a8a;
         font-size: 14px;
         font-weight: 500;
-        height: 83.5vh;
+        height: 82vh;
        
         button{
           border: none;
-          padding: 5px 12px;
+          padding: 5px 10px;
           /* border-radius: px; */
           cursor: pointer;
           background-color:transparent;
           
           
-  
+         
           text-align: left;
           img{
             width: 17px;
@@ -279,7 +283,7 @@ img{
           a{
             text-decoration: none;
             color:white;
-            font-size: 14px;
+            font-size: 13px;
             
           }
          
@@ -318,3 +322,113 @@ img{
   }
 
 }
+
+
+/* clientmaster css */
+
+.client-master{
+  display: grid;
+  gap: 20px;
+
+  .input-div{
+    border-radius: 2px;
+    height: 100px;
+    color: #273A3A;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    margin: 30px 20px;
+    background-color: #f1f1f1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+    button {
+      text-align: center;
+        color: aliceblue;
+       background-color: #273A3A;
+      border-radius: 5px;
+      height: 35px;
+      border: none;
+      width: 60px;
+  
+    }
+  
+  }
+ 
+  .getlist{
+    font-size: 13px;
+    margin: 0px 20px;
+    border-radius: 8px;
+    padding: 10px;
+    /* height: 200px; */
+    background-color: #f1f1f1;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+  .selectrow{
+    display: flex;
+    justify-content: end;
+    select{
+      width: 50px;
+      border: 2px solid #273A3A ;
+    }
+  }
+  .page{
+    display: flex;
+   margin: 10px;
+   color: white; 
+   list-style: none;
+   justify-content: end;
+   gap:7px;
+   li{
+    width: 25px;
+    height: 25px;
+    color: #8e8a8a;
+    background-color: #c8c8c8;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1px;
+   }
+   .active{
+    background-color: #273A3A;
+    color: white;
+   }
+  }
+  
+  img{
+    height: 17px;
+   }
+  }
+
+
+}
+
+  
+.add-client{
+  height: 270px;
+  border-radius: 2px;
+  
+  color: #273A3A;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  margin: 30px 20px;
+  background-color: #f1f1f1;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  button {
+    text-align: center;
+      color: aliceblue;
+     background-color: #273A3A;
+    border-radius: 5px;
+    height: 35px;
+    border: none;
+    width: 60px;
+
+  }
+
+  input,select{
+    height: 35px;
+  }
+
+}
+
+

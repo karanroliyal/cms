@@ -5,8 +5,6 @@
     <title>Layout</title>
     <link rel="stylesheet" href="../assetes/css/bootstrap.min.css">
     <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="../assetes/icon/bootstrap-icons-1.11.3">
- 
 </head>
 
 <body>
@@ -35,7 +33,7 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="usermaster">
 
-                            <div class="row filter-div">
+                            <div class="row input-div">
                                 <div class="col-2 ">
                                     <label for="id">Id:</label>
                                     <input type="text" class="form-control numeric search" >
@@ -84,11 +82,11 @@
                         
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-                            <div class="row filter-div ">
+                            <div class="row input-div">
 
                                 <div class="col-2">
                                     <label for="Name">Name:</label>
-                                    <input type="text" class="form-control" id="Name" name="name" maxlength="20" oninput="namevalidate()">
+                                    <input type="text" class="form-control" id="Name" name="name" maxlength="20" >
                                     <span id="log_er2"></span>
                                 </div>
                                 <div class="col-2">
@@ -103,10 +101,12 @@
                                 </div>
                                 <div class="col-2">
                                     <label for="inputPassword">Password:</label>
-                                    <input type="password" class="form-control" id="inputPassword" name="password" >
-                    
+                                    <input type="password" class="form-control" id="inputPassword" name="password" value="" >
+                                     
                                     <span id="log_er"></span>
+                                    
                                 </div>
+                                <input type="hidden" id="pass" value="">
                                 <input type="hidden" id="id" value="">
                                 <div class="col-2">
                                     <button type="button" class=" mt-3" id="insert-btn">Add</button>
@@ -128,7 +128,7 @@
         <script src="../assetes/js/bootstrap.min.js"></script>
         <script src="../assetes/jquery/jquery-3.7.1.min.js"></script>
         <script src="../validation.js"></script>
-        <script src="../ajaxcall.js"></script>
+        <script src="ajaxcall.js"></script>
 
 </body>
 

@@ -1,35 +1,10 @@
-//.................................Validation............................................
 
-// validation.............................................................
 
 $("#update-btn").hide();
 
 // login//---------------
 
-$("#login-btn").on("click", function () {
-  let email = $("#inputemail").val();
 
-  let password = $("#inputPassword").val();
-
-  $.ajax({
-    url: "user_backend.php",
-    type: "post",
-    data: {
-      email,
-      password,
-    },
-    success: function (data) {
-      if (data == 0) {
-        $("input").addClass("border-danger");
-
-        $("#log_er").text("password is required");
-        $("#log_er1").text("email is required");
-      } else if (data == 1) {
-        window.location.href = "http://localhost/First_Project/sidebar.php";
-      }
-    },
-  });
-});
 
 //  getting data from database ...............................
 
@@ -127,12 +102,6 @@ $("#insert-btn").on("click", function () {
   var email = document.getElementById("inputemail").value;
   var phone = document.getElementById("Phone").value;
 
-
-  console.log(  $("#log_er1").val(),' $("#log_er1").val()')
-  console.log(  $("#log_er2").val(),' $("#log_er1").val()')
-  console.log(  $("#log_er").val(),' $("#log_er1").val()')
-  console.log(  $("#log_er3").val(),' $("#log_er1").val()')
-
   if (
     $("#log_er1").text()=="" &&
     $("#log_er2").text()=="" &&
@@ -140,7 +109,7 @@ $("#insert-btn").on("click", function () {
     $("#log_er3").text()==""
   ) 
   {
-    debugger
+    
     $.ajax({
       url: "http://localhost/First_Project/usermaster/user_backend.php",
 
@@ -211,7 +180,9 @@ $(document).on("click", ".edit-btn", function () {
       $("#Name").val(data.create_by);
       $("#Phone").val(data.phone);
       $("#inputemail").val(data.email);
-      $("#inputPassword").val(data.PASSWORD);
+      
+      $("#pass").val(data.PASSWORD);
+      console.log($("#pass"));
       $("#id").val(data.id);
       $("#update-btn").show();
       $("#insert-btn").hide();
@@ -225,8 +196,13 @@ $(document).on("click", ".edit-btn", function () {
 // update data..............................
 
 $("#update-btn").on("click", function () {
-  validate();
   var password = document.getElementById("inputPassword").value;
+
+  if(password==''){
+  password=$("#pass").val();
+   
+  }
+  updatevalidation();
   var Name = document.getElementById("Name").value;
   var email = document.getElementById("inputemail").value;
   var phone = document.getElementById("Phone").value;

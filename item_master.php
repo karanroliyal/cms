@@ -3,8 +3,10 @@
 
 <head>
     <title>Layout</title>
-    <link rel="stylesheet" href="./assetes/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../assetes/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../assetes/icon/bootstrap-icons-1.11.3">
+ 
 </head>
 
 <body>
@@ -12,12 +14,12 @@
     <div class="main-container-wrapper">
 
         <div class="main-nav-bar">
-            <?php include_once("navbar.php") ?>
+            <?php include_once("../navbar.php") ?>
         </div>
 
         <div class="detail-container">
             <div class="sidebar">
-                <?php include_once("sidebar.php") ?>
+                <?php include_once("../sidebar.php") ?>
             </div>
             <div class="content">
             </div>

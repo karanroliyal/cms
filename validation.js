@@ -1,3 +1,29 @@
+$("#login-btn").on("click", function () {
+  let email = $("#inputemail").val();
+
+  let password = $("#inputPassword").val();
+
+  $.ajax({
+    url: "user_backend.php",
+    type: "post",
+    data: {
+      email,
+      password,
+    },
+    success: function (data) {
+      if (data == 0) {
+        $("input").addClass("border-danger");
+
+        $("#log_er").text("password is required");
+        $("#log_er1").text("email is required");
+      } else if (data == 1) {
+        window.location.href = "http://localhost/First_Project/sidebar.php";
+      }
+    },
+  });
+});
+  
+  
   $("input[type='email']").on("input",function(){
 
     var Validemail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}$/;
@@ -88,17 +114,52 @@ function validate(e){
     $(this).next().text("all field are required");
     
   }
-
 })
 
 }
 
+
+// validate function when updating data
+
+  
+function updatevalidation(e){
+  
+  $("input:not([type='hidden']):not([type='password'])").each( function(){
+   
+   if($(this).val()==""){
+ 
+     $(this).next().text("all field are required");
      
+   }
+ 
+ })
+ 
+ }   
   
   
   // only numeric
   $(document).on("input", ".numeric", function () {
     this.value = this.value.replace(/\D/g, "");
   });
+
+ 
+  var formvalidate=true;
+
+function validateClient(){
+  
+  $("#formdata").each(function(){
+ 
+    $(this).find("input , select").each(function(){
+    if($(this).val()==""){
+      $(this).next().text("all field are required");
+
+      formvalidate = false;
+    }
+    
+  
+  });
+
+});
+}
 
 
